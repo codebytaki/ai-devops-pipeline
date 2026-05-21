@@ -1,6 +1,22 @@
 # ⚙️ AI-Powered DevOps Pipeline
 
+<div align="center">
+
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Python](https://img.shields.io/badge/python-3.11+-green.svg)
+![Docker](https://img.shields.io/badge/docker-ready-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-orange.svg)
+
+**Complete All-in-One DevOps Solution with AI Integration**
+
 Automated CI/CD pipeline and DevOps infrastructure management enhanced with AI capabilities. Streamline your development workflow with intelligent automation.
+
+[Features](#-features) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Demo](#-demo)
+
+</div>
+
+---
 
 ## ✨ Features
 
