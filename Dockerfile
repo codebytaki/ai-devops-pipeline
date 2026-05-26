@@ -30,10 +30,9 @@ COPY --from=builder /root/.local /root/.local
 
 # Copy application code
 COPY src/ ./src/
-COPY scripts/ ./scripts/
 
-# Make sure scripts are executable
-RUN chmod +x scripts/*.sh
+# Create scripts directory
+RUN mkdir -p scripts logs
 
 # Set Python path
 ENV PATH=/root/.local/bin:$PATH
