@@ -83,7 +83,7 @@ jobs:
           OPENAI_API_KEY: ""
           ANTHROPIC_API_KEY: ""
 
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@v7
         if: matrix.python-version == env.PYTHON_DEFAULT
         with:
           files: coverage.xml
