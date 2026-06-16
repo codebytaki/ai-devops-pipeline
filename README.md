@@ -1,18 +1,22 @@
-# ⚙️ AI-Powered DevOps Pipeline
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1f6feb,100:0d1117&height=200&section=header&text=AI%20DevOps%20Pipeline&fontSize=45&fontColor=58a6ff&fontAlignY=38&desc=Intelligent%20CI%2FCD%20%7C%20Docker%20%7C%20Terraform%20%7C%20GitHub%20Actions&descSize=17&descAlignY=58&descColor=8b949e&animation=fadeIn" />
+
+</div>
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![Python](https://img.shields.io/badge/python-3.11+-green.svg)
-![Docker](https://img.shields.io/badge/docker-ready-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-orange.svg)
+[![CI/CD](https://github.com/codebytaki/ai-devops-pipeline/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/codebytaki/ai-devops-pipeline/actions/workflows/ci-cd.yml)
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docker.com)
+[![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?style=flat-square&logo=terraform&logoColor=white)](https://terraform.io)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/codebytaki/ai-devops-pipeline?style=flat-square&color=yellow)](https://github.com/codebytaki/ai-devops-pipeline/stargazers)
+[![Issues](https://img.shields.io/github/issues/codebytaki/ai-devops-pipeline?style=flat-square)](https://github.com/codebytaki/ai-devops-pipeline/issues)
 
-**Complete All-in-One DevOps Solution with AI Integration**
+**AI-Powered CI/CD Pipeline with intelligent automation, smart code review, auto-scaling, and real-time monitoring.**
 
-Automated CI/CD pipeline and DevOps infrastructure management enhanced with AI capabilities. Streamline your development workflow with intelligent automation.
-
-[Features](#-features) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Demo](#-demo)
+[🚀 Quick Start](#-quick-start) · [✨ Features](#-features) · [🏗️ Architecture](#️-architecture) · [📖 Docs](#-documentation) · [🤝 Contributing](#-contributing)
 
 </div>
 
@@ -20,328 +24,310 @@ Automated CI/CD pipeline and DevOps infrastructure management enhanced with AI c
 
 ## ✨ Features
 
-- 🚀 **CI/CD Automation** - AI-powered continuous integration and deployment
-- 🐳 **Docker Integration** - Automated containerization and orchestration
-- 📦 **Infrastructure as Code** - Terraform and CloudFormation support
-- 🤖 **AI Code Review** - Automated pull request reviews
-- 📊 **Monitoring & Alerts** - Real-time system monitoring with AI insights
-- 🔄 **Auto-scaling** - Intelligent resource management
-- 🛡️ **Security Scanning** - Automated vulnerability detection in pipelines
-- 📝 **Smart Logging** - AI-enhanced log analysis and troubleshooting
+<table>
+<tr>
+<td width="50%">
+
+**🤖 AI-Powered**
+- Intelligent code review on every PR
+- AI log analysis & troubleshooting
+- Smart resource auto-scaling
+- Automated YAML/Dockerfile generation
+
+</td>
+<td width="50%">
+
+**⚙️ DevOps Core**
+- Full CI/CD with GitHub Actions
+- Docker multi-stage builds
+- Terraform infrastructure as code
+- Blue-green zero-downtime deployments
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+**🛡️ Security**
+- Automated vulnerability scanning (Trivy, Bandit)
+- Secret detection pre-commit
+- OWASP dependency checks
+- Security gate in pipeline
+
+</td>
+<td width="50%">
+
+**📊 Observability**
+- Prometheus + Grafana monitoring
+- Real-time build/deploy dashboards
+- DORA metrics tracking
+- Intelligent alerting
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🏗️ Architecture
+
+```
+Developer
+    │
+    ▼ git push
+GitHub Repository
+    │
+    ▼ Triggers
+GitHub Actions CI/CD Pipeline
+    ├── 🔍 Lint & Format Check
+    ├── 🤖 AI Code Review
+    ├── 🧪 Tests (Unit + Integration)
+    ├── 🛡️ Security Scan (Trivy + Bandit)
+    ├── 🐳 Docker Build & Push
+    ├── 🏗️ Terraform Plan/Apply
+    └── 🚀 Deploy (Blue-Green)
+              │
+              ▼
+        Production Environment
+              │
+    ┌─────────┴──────────┐
+    │   Prometheus        │
+    │   Grafana Dashboard │
+    └────────────────────┘
+```
+
+---
 
 ## 🚀 Quick Start
 
-### Prerequisites
-
-- Docker and Docker Compose
-- Python 3.8+
-- Git
-- Cloud provider account (AWS/GCP/Azure)
-
-### Installation
-
 ```bash
-# Clone the repository
+# 1. Clone
 git clone https://github.com/codebytaki/ai-devops-pipeline.git
 cd ai-devops-pipeline
 
-# Install dependencies
+# 2. Configure
+cp .env.example .env
+# Edit .env with your API keys and cloud credentials
+
+# 3. Run with Docker Compose
+docker compose up -d
+
+# 4. Access dashboards
+# App:      http://localhost:5000
+# Grafana:  http://localhost:3000
+```
+
+> **Prerequisites:** Docker, Docker Compose, Python 3.11+, Git
+
+---
+
+## 📋 Prerequisites
+
+| Tool | Version | Purpose |
+|------|---------|---------|
+| Python | 3.11+ | Core runtime |
+| Docker | 24+ | Containerization |
+| Terraform | 1.5+ | Infrastructure |
+| Git | 2.40+ | Version control |
+
+---
+
+## 🛠️ Installation
+
+```bash
+# Install Python dependencies
 pip install -r requirements.txt
 
-# Configure environment
-cp .env.example .env
-# Edit .env with your configuration
+# Verify setup
+python src/main.py --check
+
+# Run tests
+pytest tests/ -v
 ```
+
+---
 
 ## 💡 Usage
 
-### Setting Up CI/CD Pipeline
-
-```yaml
-# .github/workflows/ci-cd.yml
-name: AI-Powered CI/CD
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      
-      - name: AI Code Review
-        uses: codebytaki/ai-reviewer@v1
-        with:
-          ai-provider: openai
-          api-key: ${{ secrets.OPENAI_API_KEY }}
-      
-      - name: Build Docker Image
-        run: docker build -t myapp:${{ github.sha }} .
-      
-      - name: Run Tests
-        run: pytest tests/
-      
-      - name: Deploy
-        if: github.ref == 'refs/heads/main'
-        run: ./scripts/deploy.sh
-```
-
-### Docker Compose Setup
-
-```yaml
-# docker-compose.yml
-version: '3.8'
-
-services:
-  app:
-    build: .
-    ports:
-      - "5000:5000"
-    environment:
-      - AI_PROVIDER=${AI_PROVIDER}
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
-    volumes:
-      - ./logs:/app/logs
-
-  monitoring:
-    image: grafana/grafana
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./monitoring:/var/lib/grafana
-
-  database:
-    image: postgres:13
-    environment:
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-    volumes:
-      - db_data:/var/lib/postgresql/data
-
-volumes:
-  db_data:
-```
-
-## 🛠️ Configuration
-
-### Environment Variables
-
-```env
-# AI Configuration
-AI_PROVIDER=openai
-OPENAI_API_KEY=your_api_key_here
-
-# Cloud Provider
-CLOUD_PROVIDER=aws
-AWS_ACCESS_KEY_ID=your_access_key
-AWS_SECRET_ACCESS_KEY=your_secret_key
-AWS_REGION=us-east-1
-
-# Database
-DATABASE_URL=postgresql://user:password@localhost:5432/devops_db
-
-# Docker
-DOCKER_REGISTRY=docker.io
-DOCKER_USERNAME=your_username
-DOCKER_PASSWORD=your_password
-```
-
-### Pipeline Configuration
-
-```yaml
-# pipeline_config.yaml
-pipeline:
-  name: production-deployment
-  stages:
-    - name: code_review
-      ai_enabled: true
-      auto_approve: false
-    
-    - name: testing
-      parallel: true
-      coverage_threshold: 80
-    
-    - name: security_scan
-      tools:
-        - sonarqube
-        - trivy
-        - bandit
-    
-    - name: build
-      docker:
-        base_image: python:3.9-slim
-        multi_stage: true
-    
-    - name: deploy
-      strategy: blue-green
-      auto_rollback: true
-      health_check: true
-```
-
-## 📊 Monitoring Dashboard
-
-Access the monitoring dashboard at `http://localhost:3000`
-
-### Metrics Tracked
-
-- Build success/failure rates
-- Deployment frequency
-- Mean time to recovery (MTTR)
-- Change failure rate
-- AI review accuracy
-- Resource utilization
-
-## 🤖 AI Features
-
-### 1. Intelligent Code Review
+### AI Code Review
 
 ```python
 from devops_ai import CodeReviewer
 
-reviewer = CodeReviewer()
-
-# Review pull request
+reviewer = CodeReviewer(provider="openai")
 review = reviewer.analyze_pr(pr_number=42)
-
-# Get suggestions
-suggestions = review.get_suggestions()
+print(review.get_suggestions())
 ```
 
-### 2. Automated Troubleshooting
+### AI YAML Generator
 
 ```python
-from devops_ai import Troubleshooter
+from devops_ai import YAMLGenerator
 
-troubleshooter = Troubleshooter()
-
-# Analyze logs
-issues = troubleshooter.analyze_logs("logs/build.log")
-
-# Get recommendations
-recommendations = troubleshooter.recommend(issues)
+gen = YAMLGenerator()
+# Auto-generate GitHub Actions workflow
+workflow = gen.github_actions(
+    language="python",
+    deploy_target="aws-ecs"
+)
 ```
 
-### 3. Smart Scaling
+### AI Dockerfile Generator
+
+```python
+from devops_ai import DockerfileGenerator
+
+gen = DockerfileGenerator()
+dockerfile = gen.generate(
+    project_type="fastapi",
+    optimize_for="production"
+)
+```
+
+### Smart Auto-Scaling
 
 ```python
 from devops_ai import AutoScaler
 
-scaler = AutoScaler(
-    min_instances=2,
-    max_instances=10,
-    target_cpu=70
-)
-
-# Enable auto-scaling
+scaler = AutoScaler(min_instances=2, max_instances=10, target_cpu=70)
 scaler.enable()
 ```
+
+---
 
 ## 📁 Project Structure
 
 ```
 ai-devops-pipeline/
 ├── .github/
-│   └── workflows/          # GitHub Actions workflows
+│   ├── workflows/
+│   │   └── ci-cd.yml          # Main CI/CD pipeline
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.md
+│   │   └── feature_request.md
+│   └── PULL_REQUEST_TEMPLATE.md
 ├── src/
-│   ├── pipeline/           # Pipeline automation
-│   ├── ai_engine/          # AI integration
-│   ├── monitoring/         # Monitoring and alerts
-│   └── deployment/         # Deployment scripts
-├── docker/                 # Docker configurations
-├── terraform/              # Infrastructure as Code
-├── scripts/                # Utility scripts
-├── monitoring/             # Grafana dashboards
-├── tests/                  # Test suite
-└── docs/                   # Documentation
+│   ├── pipeline/              # Pipeline automation
+│   ├── ai_engine/             # AI integration modules
+│   ├── monitoring/            # Metrics & alerting
+│   └── deployment/            # Deployment scripts
+├── terraform/
+│   ├── main.tf                # AWS infrastructure
+│   └── variables.tf
+├── monitoring/
+│   └── prometheus.yml         # Prometheus config
+├── scripts/
+│   └── deploy.sh              # Deployment script
+├── tests/                     # Test suite
+├── docs/                      # Documentation
+├── .env.example
+├── docker-compose.yml
+├── Dockerfile
+├── requirements.txt
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── SECURITY.md
+└── CODE_OF_CONDUCT.md
 ```
 
-## 🔧 Terraform Infrastructure
+---
 
-```hcl
-# terraform/main.tf
-provider "aws" {
-  region = var.aws_region
-}
+## 🔧 Configuration
 
-resource "aws_ecs_cluster" "main" {
-  name = "ai-devops-cluster"
-}
+```env
+# AI Provider
+AI_PROVIDER=openai
+OPENAI_API_KEY=your_key_here
 
-resource "aws_ecs_service" "app" {
-  name            = "ai-devops-service"
-  cluster         = aws_ecs_cluster.main.id
-  task_definition = aws_ecs_task_definition.app.arn
-  desired_count   = 3
-  
-  deployment_strategy {
-    type                = "BLUE_GREEN"
-    auto_rollback       = true
-    deployment_interval = "5m"
-  }
-}
+# Cloud
+CLOUD_PROVIDER=aws
+AWS_REGION=us-east-1
+
+# Database
+DATABASE_URL=postgresql://user:pass@localhost:5432/devops_db
+
+# Docker
+DOCKER_REGISTRY=docker.io
+DOCKER_USERNAME=your_username
 ```
+
+---
+
+## 📊 Monitoring
+
+Access Grafana at `http://localhost:3000` (default: admin/admin)
+
+**Tracked Metrics (DORA):**
+- ✅ Deployment frequency
+- ✅ Lead time for changes
+- ✅ Mean time to recovery (MTTR)
+- ✅ Change failure rate
+
+---
+
+## 🗺️ Roadmap
+
+- [x] Core CI/CD pipeline with GitHub Actions
+- [x] Docker + Docker Compose setup
+- [x] Terraform AWS infrastructure
+- [x] Prometheus + Grafana monitoring
+- [ ] 🤖 AI YAML Generator (v1.1)
+- [ ] 🐳 AI Dockerfile Optimizer (v1.1)
+- [ ] ☁️ AWS Cost Optimizer (v1.2)
+- [ ] 🔵 Azure Integration (v1.3)
+- [ ] ☸️ Kubernetes Auto-Deploy (v2.0)
+- [ ] 🧠 LLM-powered incident response (v2.0)
+
+---
 
 ## 🧪 Testing
 
 ```bash
-# Run all tests
+# All tests
 pytest tests/
 
-# Integration tests
-pytest tests/integration/
+# With coverage
+pytest tests/ --cov=src --cov-report=html
 
-# Performance tests
-pytest tests/performance/
+# Integration only
+pytest tests/integration/
 ```
 
-## 📈 Best Practices
-
-- ✅ Always use environment variables for secrets
-- ✅ Implement proper logging and monitoring
-- ✅ Use multi-stage Docker builds
-- ✅ Enable AI code review for all PRs
-- ✅ Set up automated security scanning
-- ✅ Implement blue-green deployments
-- ✅ Configure auto-rollback mechanisms
-- ✅ Regular dependency updates
+---
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+```bash
+# Quick contribution flow
+git fork && git clone
+git checkout -b feature/your-feature
+git commit -m "feat: add your feature"
+git push origin feature/your-feature
+# Open a Pull Request
+```
+
+---
+
+## 🛡️ Security
+
+Found a vulnerability? Please read [SECURITY.md](SECURITY.md) for responsible disclosure guidelines.
+
+---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- GitHub Actions for CI/CD automation
-- Docker for containerization
-- Grafana for monitoring
-- Terraform for infrastructure management
-- OpenAI for AI capabilities
-
-## 📫 Contact
-
-Taki - [@codebytaki](https://github.com/codebytaki)
-
-Project Link: [https://github.com/codebytaki/ai-devops-pipeline](https://github.com/codebytaki/ai-devops-pipeline)
+MIT © [Taki](https://github.com/codebytaki) — see [LICENSE](LICENSE)
 
 ---
 
 <div align="center">
 
-**🚀 DevOps Automation by Taki**
+**Built with ❤️ by [codebytaki](https://github.com/codebytaki)**
 
-⭐ Star this repo if you find it helpful!
+⭐ Star this repo if it helped you!
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1f6feb,100:0d1117&height=80&section=footer" />
 
 </div>
